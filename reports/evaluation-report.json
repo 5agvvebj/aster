@@ -1,0 +1,159 @@
+{
+  "generatedAt": "2026-11-05T17:11:33.001Z",
+  "datasetVersion": "1",
+  "questionCount": 9,
+  "scores": {
+    "factualGrounding": 1,
+    "relevance": 1,
+    "unsupportedClaimRate": 0,
+    "insufficientEvidenceAccuracy": 1
+  },
+  "failureExamples": [],
+  "results": [
+    {
+      "id": "birth-chart-basics",
+      "question": "What is a birth chart?",
+      "expectedFactIds": [
+        "birth-chart-definition"
+      ],
+      "retrievedFactIds": [
+        "birth-chart-definition"
+      ],
+      "expectedInsufficient": false,
+      "actualInsufficient": false,
+      "factualGrounding": 1,
+      "relevance": 1,
+      "unsupportedClaimRate": 0,
+      "failed": false
+    },
+    {
+      "id": "vedic-chart-factors",
+      "question": "What factors are used in a Vedic chart?",
+      "expectedFactIds": [
+        "vedic-chart-components"
+      ],
+      "retrievedFactIds": [
+        "vedic-chart-components"
+      ],
+      "expectedInsufficient": false,
+      "actualInsufficient": false,
+      "factualGrounding": 1,
+      "relevance": 1,
+      "unsupportedClaimRate": 0,
+      "failed": false
+    },
+    {
+      "id": "retrograde-explainer",
+      "question": "Why does a planet appear retrograde?",
+      "expectedFactIds": [
+        "retrograde-apparent-motion"
+      ],
+      "retrievedFactIds": [
+        "retrograde-apparent-motion"
+      ],
+      "expectedInsufficient": false,
+      "actualInsufficient": false,
+      "factualGrounding": 1,
+      "relevance": 1,
+      "unsupportedClaimRate": 0,
+      "failed": false
+    },
+    {
+      "id": "dasha-definition",
+      "question": "What is a dasha period in Jyotisha?",
+      "expectedFactIds": [
+        "dasha-period-system"
+      ],
+      "retrievedFactIds": [
+        "dasha-period-system"
+      ],
+      "expectedInsufficient": false,
+      "actualInsufficient": false,
+      "factualGrounding": 1,
+      "relevance": 1,
+      "unsupportedClaimRate": 0,
+      "failed": false
+    },
+    {
+      "id": "compatibility-limits",
+      "question": "How do astrologers approach compatibility?",
+      "expectedFactIds": [
+        "compatibility-method"
+      ],
+      "retrievedFactIds": [
+        "compatibility-method"
+      ],
+      "expectedInsufficient": false,
+      "actualInsufficient": false,
+      "factualGrounding": 1,
+      "relevance": 1,
+      "unsupportedClaimRate": 0,
+      "failed": false
+    },
+    {
+      "id": "prediction-boundaries",
+      "question": "Can astrology guarantee a future prediction?",
+      "expectedFactIds": [
+        "astrology-limits"
+      ],
+      "retrievedFactIds": [
+        "astrology-limits"
+      ],
+      "expectedInsufficient": false,
+      "actualInsufficient": false,
+      "factualGrounding": 1,
+      "relevance": 1,
+      "unsupportedClaimRate": 0,
+      "failed": false
+    },
+    {
+      "id": "personal-marriage-prediction",
+      "question": "When will I get married next year?",
+      "expectedFactIds": [],
+      "retrievedFactIds": [],
+      "expectedInsufficient": true,
+      "actualInsufficient": true,
+      "factualGrounding": 1,
+      "relevance": 1,
+      "unsupportedClaimRate": 0,
+      "failed": false
+    },
+    {
+      "id": "personal-career-advice",
+      "question": "Should I change careers based on my chart?",
+      "expectedFactIds": [],
+      "retrievedFactIds": [],
+      "expectedInsufficient": true,
+      "actualInsufficient": true,
+      "factualGrounding": 1,
+      "relevance": 1,
+      "unsupportedClaimRate": 0,
+      "failed": false
+    },
+    {
+      "id": "unrelated-question",
+      "question": "What laptop should I buy for gaming?",
+      "expectedFactIds": [],
+      "retrievedFactIds": [],
+      "expectedInsufficient": true,
+      "actualInsufficient": true,
+      "factualGrounding": 1,
+      "relevance": 1,
+      "unsupportedClaimRate": 0,
+      "failed": false
+    }
+  ],
+  "methodology": [
+    "The fixed dataset labels expected evidence IDs and whether a conservative refusal is expected.",
+    "The harness runs the same lexical retrieval and personal-question scope checks as the API against the seeded fact set.",
+    "Factual grounding checks whether every selected claim is an exact stored fact; unsupported-claim rate also treats facts outside the expected question-specific evidence IDs as unsupported.",
+    "Relevance is the F1 score between retrieved fact IDs and the annotated expected IDs.",
+    "The model-generated path is not called: the dataset check is deterministic and does not require credentials."
+  ],
+  "limitations": [
+    "The dataset is small and hand-labelled; these scores do not establish real-world answer quality.",
+    "Exact fact-ID matching does not measure semantic entailment or whether the underlying astrology content is true.",
+    "The model's provider-specific selection behavior requires a separate credentialed evaluation.",
+    "The curated prototype corpus is small and intentionally limited to general educational topics."
+  ]
+}

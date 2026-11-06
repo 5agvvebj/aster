@@ -1,0 +1,56 @@
+[
+  {
+    "id": "birth-chart-basics",
+    "question": "What is a birth chart?",
+    "expectedFactIds": ["birth-chart-definition"],
+    "expectInsufficient": false
+  },
+  {
+    "id": "vedic-chart-factors",
+    "question": "What factors are used in a Vedic chart?",
+    "expectedFactIds": ["vedic-chart-components"],
+    "expectInsufficient": false
+  },
+  {
+    "id": "retrograde-explainer",
+    "question": "Why does a planet appear retrograde?",
+    "expectedFactIds": ["retrograde-apparent-motion"],
+    "expectInsufficient": false
+  },
+  {
+    "id": "dasha-definition",
+    "question": "What is a dasha period in Jyotisha?",
+    "expectedFactIds": ["dasha-period-system"],
+    "expectInsufficient": false
+  },
+  {
+    "id": "compatibility-limits",
+    "question": "How do astrologers approach compatibility?",
+    "expectedFactIds": ["compatibility-method"],
+    "expectInsufficient": false
+  },
+  {
+    "id": "prediction-boundaries",
+    "question": "Can astrology guarantee a future prediction?",
+    "expectedFactIds": ["astrology-limits"],
+    "expectInsufficient": false
+  },
+  {
+    "id": "personal-marriage-prediction",
+    "question": "When will I get married next year?",
+    "expectedFactIds": [],
+    "expectInsufficient": true
+  },
+  {
+    "id": "personal-career-advice",
+    "question": "Should I change careers based on my chart?",
+    "expectedFactIds": [],
+    "expectInsufficient": true
+  },
+  {
+    "id": "unrelated-question",
+    "question": "What laptop should I buy for gaming?",
+    "expectedFactIds": [],
+    "expectInsufficient": true
+  }
+]

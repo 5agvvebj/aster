@@ -1,0 +1,67 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: aster
+      POSTGRES_USER: aster
+      POSTGRES_PASSWORD: aster-local-only
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aster -d aster"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - aster-postgres:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      target: development
+    command: sh -c "npm run db:migrate && npm run db:seed && npm run dev -- --hostname 0.0.0.0"
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgres://aster:aster-local-only@db:5432/aster
+      NODE_ENV: development
+      NEXT_TELEMETRY_DISABLED: "1"
+    ports:
+      - "127.0.0.1:3000:3000"
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:3000/').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - .:/app
+      - app-node-modules:/app/node_modules
+      - app-next-cache:/app/.next
+  worker:
+    build:
+      context: .
+      target: development
+    command: npm run jobs:worker
+    depends_on:
+      app:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgres://aster:aster-local-only@db:5432/aster
+      NODE_ENV: development
+    volumes:
+      - .:/app
+      - app-node-modules:/app/node_modules
+
+volumes:
+  aster-postgres:
+  app-node-modules:
+  app-next-cache:
