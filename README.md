@@ -58,8 +58,11 @@ camera permission, and browser end-to-end flows require their respective local
 configuration. The MediaPipe WASM runtime is loaded from a pinned jsDelivr
 release; image frames are never sent to that service. Chart calculations use an
 approximate Lahiri-style ayanamsa and are educational, not certified readings.
-Public deployment and repository links will be added after provisioning and
-mobile verification.
+
+## Submission links
+
+- Public source: [github.com/5agvvebj/aster](https://github.com/5agvvebj/aster)
+- Live app: pending Vercel and Neon provisioning; no live URL is available yet.
 
 ## Local development
 
