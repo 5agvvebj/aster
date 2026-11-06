@@ -32,6 +32,10 @@ reviewed facts, answers, saved items, journal entries, rate limits, and
 background jobs. A worker claims summary jobs with `SKIP LOCKED` and retries
 failures.
 
+Production runs on Vercel with Neon PostgreSQL in AWS US East (N. Virginia).
+The background-job worker is not hosted by this deployment, so queued summaries
+require a separately run worker.
+
 ## Answer and data flow
 
 An answer request is validated and scoped to a signed guest session. The

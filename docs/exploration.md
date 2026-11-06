@@ -58,6 +58,6 @@ the Panchang view shows location/date controls and calculated calendar values.
 | :---: | :---: |
 | ![Interactive constellation sky on a phone](./screenshots/sky-mobile.png) | ![Daily Panchang on a phone](./screenshots/panchang-mobile.png) |
 
-The [source repository](https://github.com/5agvvebj/aster) is public; the app
-has not been deployed yet. These captures document the local build, not a live
-deployment.
+The [source repository](https://github.com/5agvvebj/aster) is public and the
+[app is live](https://aster-dusky.vercel.app). These captures document the
+local build, not the live deployment.

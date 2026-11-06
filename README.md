@@ -62,7 +62,7 @@ approximate Lahiri-style ayanamsa and are educational, not certified readings.
 ## Submission links
 
 - Public source: [github.com/5agvvebj/aster](https://github.com/5agvvebj/aster)
-- Live app: pending Vercel and Neon provisioning; no live URL is available yet.
+- Live app: [aster-dusky.vercel.app](https://aster-dusky.vercel.app)
 
 ## Local development
 
